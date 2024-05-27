@@ -14,20 +14,17 @@
             "Deal": {
                 "Concurrency": 1
             },
-           "Docker": {
+            "Docker": {
                 "Entrypoint": [
                     "bash", "-c",
                     "python3 entrypoint.py 2>/dev/null"
                 ],
                 "Image": "zorlin/ollama:llama3-8b-lilypad1",
-                 "EnvironmentVariables": [
-                        {{- if .Prompt }}
-                        "PROMPT={{ .Prompt }}",
-                        {{- end }}
-                    ]
+                "EnvironmentVariables": [
+                    "PROMPT=Generate a poem"
+                ]
             },
-
-           "Engine": "Docker",
+            "Engine": "Docker",
             "Language": {
                 "JobContext": {}
             },
@@ -47,11 +44,11 @@
             "Wasm": {
                 "EntryModule": {}
             },
-            "outputs": [
+            "Outputs": [
                 {
                     "Name": "outputs",
                     "StorageSource": "IPFS",
-                    "path": "/outputs"
+                    "Path": "/outputs"
                 }
             ]
         }
