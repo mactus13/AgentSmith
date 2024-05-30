@@ -2,7 +2,7 @@
     "machine": {
         "gpu": 1,
         "cpu": 1000,
-        "ram": 8000
+        "ram": 100
     },
     "job": {
         "APIVersion": "V1beta1",
@@ -37,7 +37,7 @@
         "Resources": {
             "GPU": "1",
             "CPU": "1000",
-            "Memory": "8000"
+            "Memory": "100"
         },
         "Timeout": 1800,
         "Verifier": "Noop",
