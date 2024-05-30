@@ -13,7 +13,7 @@
             "Docker": {
                 "Entrypoint": null,
                 "EnvironmentVariables": [
-                    {{ if .Prompt }}"{{ subst "PROMPT=%s" .Prompt }}",{{ end }}
+                    "PROMPT=Generate a poem"
                 ],
                 "Image": "zorlin/ollama:llama3-8b-lilypad1",
                 "WorkingDirectory": ""
@@ -37,7 +37,7 @@
             "Memory": "8000"
         },
         "Timeout": 1800,
-        "Verifier": "Noop"
+        "Verifier": "Noop",
         "Wasm": {
             "EntryModule": {}
         }
