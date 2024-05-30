@@ -11,7 +11,10 @@
                 "Concurrency": 1
             },
             "Docker": {
-                "Entrypoint": null,
+                "Entrypoint": [
+                    "bash", "-c",
+                    "python3 entrypoint.py 2>/dev/null"
+                ],
                 "EnvironmentVariables": [
                     "PROMPT=Generate a poem"
                 ],
