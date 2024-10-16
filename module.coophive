@@ -2,14 +2,10 @@
     "machine": {
         "gpu": 1,
         "cpu": 1000,
-        "ram": 8000
+        "ram": 100
     },
     "job": {
         "APIVersion": "V1beta1",
-        "Metadata": {
-            "CreatedAt": "0001-01-01T00:00:00Z",
-            "Requester": {}
-        },
         "Spec": {
             "Deal": {
                 "Concurrency": 1
@@ -19,38 +15,33 @@
                     "bash", "-c",
                     "python3 entrypoint.py 2>/dev/null"
                 ],
-                "Image": "zorlin/ollama:llama3-8b-lilypad1",
                 "EnvironmentVariables": [
                     "PROMPT=Generate a poem"
-                ]
-            },
-            "Engine": "Docker",
-            "Language": {
-                "JobContext": {}
-            },
-            "Network": {
-                "Type": "None"
-            },
-            "PublisherSpec": {
-                "Type": "IPFS"
-            },
-            "Resources": {
-                "CPU": "3",
-                "Memory": "3gb",
-                "GPU": "1"
-            },
-            "Timeout": 1800,
-            "Verifier": "Noop",
-            "Wasm": {
-                "EntryModule": {}
-            },
-            "Outputs": [
-                {
-                    "Name": "outputs",
-                    "StorageSource": "IPFS",
-                    "Path": "/outputs"
-                }
-            ]
+                ],
+                "Image": "zorlin/ollama:llama3-8b-lilypad1",
+                "WorkingDirectory": ""
+        },
+        "Engine": "Docker",
+        "Network": {
+            "Type": "None"
+        },
+        "Outputs": [
+            {
+                "Name": "outputs",
+                "Path": "/outputs"
+            }
+        ],
+        "PublisherSpec": {
+            "Type": "IPFS"
+        },
+        "Resources": {
+            "GPU": "1"
+        },
+        "Timeout": 1800,
+        "Verifier": "Noop",
+        "Wasm": {
+            "EntryModule": {}
         }
     }
+  }
 }
